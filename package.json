@@ -8,8 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "next": "9.4.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "sass": "^1.26.5",
+    "typewriter-effect": "^2.13.1"
   }
 }
