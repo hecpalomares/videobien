@@ -25,7 +25,7 @@ body {
   margin: 0 auto;
   max-width: 65em;
   color: $primary-color;
-  background: #fdfdfd;
+  background: #f3f3f3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -54,6 +54,7 @@ h2 {
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-size: 2em;
 }
 
 h3 {
@@ -107,7 +108,7 @@ img {
 }
 
 .underlined {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #fff;
 }
 
 .size-up {
@@ -132,7 +133,7 @@ img {
 
 #top-section {
   padding: 20px;
-  background: #f1f1f1;
+  background: #4e4e4e;
   border-radius: 5px;
   margin-bottom: 8em;
   h1 {
@@ -140,6 +141,7 @@ img {
     font-weight: 400;
     font-size: 1.8em;
     margin-bottom: 0;
+    color: whitesmoke;
     @media (max-width: $breakpoint-tablet) {
       height: 240px;
       display: block;
@@ -215,6 +217,7 @@ img {
         border: 1px solid slategray;
         height: 200px;
         object-fit: contain;
+        background: #fff;
       }
 
       p {
@@ -243,22 +246,74 @@ img {
 }
 
 #prod {
+  .services {
+    display: flex;
+    margin-bottom: 8em;
+
+    ul {
+      flex: 1;
+      list-style-type: square;
+
+      h3 {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+
+      ul:first-child {
+        margin-bottom: 2em;
+      }
+    }
+  }
+
   .prod__images {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     margin-top: 1rem;
   }
   .prod__image {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1em;
+    position: relative;
+
     span {
-      color: #6f6f6f;
-      font-size: 0.75rem;
-      margin-top: 0.5rem;
+      color: #555;
+      font-size: 1em;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #554;
+      padding: 10px 20px;
+      font-size: 20px;
+      color: whitesmoke;
     }
-    &:first-child {
-      margin-right: 10px;
+
+    .prod__image--before,
+    .prod__image--after {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .prod__image--before {
+      z-index: 2;
+    }
+
+    .prod__image--after {
+      position: relative;
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
+
+    &:hover .prod__image--after {
+      opacity: 1;
+      z-index: 3;
     }
   }
 }

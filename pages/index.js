@@ -16,13 +16,13 @@ export default function Home() {
         <Problem />
         <AboutUs />
         <WhereAreWe />
-        <Solutions />
-        <hr></hr>
-        <Prepro />
-        <hr></hr>
+        {/* <Solutions /> */}
+        {/* <hr></hr> */}
+        {/* <Prepro /> */}
+        {/* <hr></hr> */}
         <Prod />
-        <hr></hr>
-        <Postpro />
+        {/* <hr></hr> */}
+        {/* <Postpro /> */}
       </main>
 
       <footer>
